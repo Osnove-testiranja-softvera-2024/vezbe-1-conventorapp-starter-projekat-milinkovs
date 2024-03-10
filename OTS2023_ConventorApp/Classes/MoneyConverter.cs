@@ -1,5 +1,4 @@
-﻿using OTS2023_ConventorApp.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace OTS2023_ConventorApp.Classes
 {
-    public class MassConverter : IConvert
+    internal class MoneyConverter
     {
-        public double Convert(double value)
+        public double ConvertMoney(double value)
         {
-            return Math.Round(value / 2.205, 3);
+            return value * 117.18;
         }
 
         public double ConvertArray(string array)
@@ -24,7 +23,7 @@ namespace OTS2023_ConventorApp.Classes
                 number += Double.Parse(values[i]);
             }
 
-            return Convert(number);
+            return ConvertMoney(number);
         }
     }
 }
